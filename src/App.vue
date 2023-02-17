@@ -2,15 +2,19 @@
   <div id="app">
     <Navbar />
     <Sidebar />
+    <b-container>
+      <MainPage />
+    </b-container>
   </div>
 </template>
 
 <script>
+import MainPage from "./components/MainPage.vue";
 import Navbar from "./components/Navbar.vue";
 import Sidebar from "./components/Sidebar.vue";
 export default {
   name: "App",
-  components: { Navbar, Sidebar },
+  components: { Navbar, Sidebar, MainPage },
 };
 </script>
 

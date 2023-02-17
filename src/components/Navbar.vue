@@ -10,7 +10,7 @@
 
       <!-- tab name -->
       <div class="tab-name">
-        <b-icon-list-ul font-scale="1.5"></b-icon-list-ul>
+        <b-icon icon="list-ul" font-scale="1.5"></b-icon>
 
         <h2>Emission Data</h2>
       </div>
@@ -28,16 +28,16 @@
           <option value="2023">2023</option>
           <option value="2024">2024</option>
         </select>
-        <b-icon-funnel-fill></b-icon-funnel-fill>
+        <b-icon icon="funnel-fill"></b-icon>
       </div>
 
       <div></div>
     </div>
     <!-- right side -->
     <div class="right-side">
-      <b-icon-search></b-icon-search>
+      <b-icon icon="search"></b-icon>
       <!-- <b-divider></b-divider> -->
-      <b-icon-bell></b-icon-bell>
+      <b-icon icon="bell"></b-icon>
 
       <div class="user">AD</div>
     </div>
@@ -45,21 +45,8 @@
 </template>
 
 <script>
-import {
-  BIconListUl,
-  BIconFunnelFill,
-  BIconSearch,
-  BIconBell,
-} from "bootstrap-vue";
-
 export default {
   name: "navbarComponent",
-  components: {
-    BIconListUl,
-    BIconFunnelFill,
-    BIconSearch,
-    BIconBell,
-  },
 };
 </script>
 

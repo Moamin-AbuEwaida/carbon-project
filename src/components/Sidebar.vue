@@ -2,22 +2,20 @@
   <div class="sidebar">
     <!-- upper list -->
     <div class="upper-part">
-      <div class="icon">
-        <b-icon-house></b-icon-house>
-        <p>Home</p>
+      <div
+        v-for="(item, i) in items"
+        :key="i"
+        @click="setActive"
+        :class="{ active }"
+        class="icon"
+      >
+        <b-icon :icon="item.icon"></b-icon>
+        <p>{{ item.text }}</p>
       </div>
-      <div class="icon">
-        <b-icon-list-ul></b-icon-list-ul>
-        <p>Data</p>
-      </div>
-      <div class="icon">
-        <b-icon-graph-down></b-icon-graph-down>
-        <p>Analysis</p>
-      </div>
-      <div class="icon">
-        <b-icon-map></b-icon-map>
-        <p>Plan</p>
-      </div>
+      <!-- <div class="icon" :class="{ active }" @click="setActive">
+        <b-icon icon="bell"></b-icon>
+        <p>bell</p>
+      </div> -->
     </div>
     <!-- lower part -->
     <div class="lower-part">
@@ -27,19 +25,29 @@
 </template>
 
 <script>
-import {
-  BIconHouse,
-  BIconListUl,
-  BIconGraphDown,
-  BIconMap,
-} from "bootstrap-vue";
 export default {
   name: "SidebarCompnent",
-  components: {
-    BIconHouse,
-    BIconListUl,
-    BIconGraphDown,
-    BIconMap,
+
+  data: () => {
+    return {
+      items: [
+        { icon: "house-door", text: "Home" },
+        { icon: "list-ul", text: "Data" },
+        { icon: "graph-down", text: "Analysis" },
+        { icon: "map", text: "Plan" },
+      ],
+      active: "",
+    };
+  },
+  methods: {
+    setActive() {
+      console.log("click");
+      if (this.active === "") {
+        this.active = "active";
+      } else if (this.active === "active") {
+        this.active = "";
+      }
+    },
   },
 };
 </script>
@@ -54,11 +62,13 @@ export default {
 
 .upper-part {
   position: absolute;
-  left: 15px;
+  left: 5px;
   top: 60px;
 }
 
 .icon {
+  width: 50px;
+  height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,5 +91,11 @@ export default {
   position: absolute;
   bottom: 90px;
   left: 5px;
+}
+
+.active {
+  scale: calc(1.2);
+
+  color: #000;
 }
 </style>
