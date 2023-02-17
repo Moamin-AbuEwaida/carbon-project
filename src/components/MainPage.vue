@@ -82,6 +82,7 @@
                                     block
                                     v-b-toggle.heatMB
                                     variant="white"
+                                    @click="setHide"
                                   >
                                     <div class="bar">
                                       <b-icon
@@ -123,6 +124,64 @@
           </b-card-body>
         </b-collapse>
       </b-card>
+    </div>
+    <!-- side page -->
+    <div class="side-screen" :class="hide">
+      <!-- side page head -->
+      <div class="side-page-head">
+        <div class="text">
+          Company facilities > Stationary combustion> Office 1
+        </div>
+        <b-button variant="light" @click="setHide">
+          <b-icon icon="x" font-scale="1.5"></b-icon
+        ></b-button>
+      </div>
+      <!-- side page body -->
+      <div class="page-body">
+        <h2>Heating main building</h2>
+        <div class="tabs">
+          <b-tabs content-class="mt-3">
+            <b-tab title="Data" active>
+              <p>Type</p>
+              <b-form-select v-model="selected" class="drop-list">
+                <b-form-select-option
+                  v-for="(item, i) in list"
+                  :key="i"
+                  :value="{ item }"
+                  >{{ item }}</b-form-select-option
+                >
+              </b-form-select>
+            </b-tab>
+            <b-tab title="History"><p>History</p></b-tab>
+            <b-tab title="Details"><p>Details</p></b-tab>
+            <b-tab title="Activity"><p>Activity</p></b-tab>
+            <b-tab title="Notes"><p>Notes</p></b-tab>
+          </b-tabs>
+        </div>
+        <!-- attachments part -->
+        <div class="uploading">
+          <div class="note">
+            <b-icon icon="file-earmark" flip-v></b-icon>
+            <a>Add note</a>
+          </div>
+          <div class="attach">
+            <b-icon icon="paperclip"></b-icon>
+            <a>Add attachment</a>
+          </div>
+        </div>
+        <!-- lower part -->
+        <div class="lower-part">
+          <!-- left side -->
+          <div class="info">
+            <b-avatar text="AD"></b-avatar>
+            <p>Alex Daenen <span>added this data</span></p>
+          </div>
+          <!-- rightside -->
+          <div>
+            <span>Just now</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -167,11 +226,28 @@ export default {
           accordation: "my-factory2",
         },
       ],
+      selected: null,
+      list: [
+        "Natural Gas",
+        "Gas oil",
+        "Propane",
+        "Mazout",
+        "Option5",
+        "(Etc.)",
+      ],
+      hide: "",
     };
   },
   methods: {
     toggle: () => {
       console.log("clicked");
+    },
+    setHide() {
+      if (this.hide === "") {
+        this.hide = "hidden";
+      } else if (this.hide === "hidden") {
+        this.hide = "";
+      }
     },
   },
 };
@@ -207,5 +283,76 @@ export default {
 .progress {
   width: 130px;
   height: 15px;
+}
+.side-screen {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: -600px;
+  width: 600px;
+  height: 100%;
+}
+.hidden {
+  right: 0;
+}
+.side-page-head {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+}
+.page-body {
+  margin: 20px;
+  width: 85%;
+}
+.tabs {
+  margin: 20px 0px;
+  width: 90%;
+  height: 350px;
+
+  border-bottom: 1px solid rgb(246, 242, 242);
+}
+
+.tabs p {
+  margin: 20px 40px;
+}
+
+.drop-list {
+  width: 50%;
+  margin-left: 40px;
+}
+.uploading {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  gap: 2;
+  justify-content: space-between;
+}
+.note,
+.attach {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.lower-part {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.lower-part > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info {
+  width: 70%;
+  gap: 15px;
+  font-weight: bold;
+}
+
+.info span {
+  font-weight: 200;
 }
 </style>
