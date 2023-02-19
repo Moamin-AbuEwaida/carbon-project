@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- <Navbar />
-    <Sidebar /> -->
+    <Navbar />
+    <!-- <Sidebar /> -->
 
     <div class="dashboard">
       <router-view />
@@ -10,12 +10,12 @@
 </template>
 
 <script>
-// import Navbar from "@/components/Navbar.vue";
+import Navbar from "@/components/Navbar.vue";
 // import Sidebar from "@/components/Sidebar.vue";
 
 export default {
   name: "DashView",
-  //   components: { Navbar, Sidebar },
+  components: { Navbar },
 };
 </script>
 
