@@ -41,7 +41,11 @@
     <div class="right-side">
       <div class="search-bar">
         <b-form-input placeholder="" style="border: none"></b-form-input>
-        <b-icon icon="search" font-scale="1.2"></b-icon>
+        <b-icon
+          icon="search"
+          font-scale="1.2"
+          style="margin: 0 2px 0 5px"
+        ></b-icon>
       </div>
       <b-icon icon="bell" font-scale="1.2"></b-icon>
       <b-avatar class="user"></b-avatar>
@@ -80,7 +84,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 3px;
+  gap: 10px;
 }
 .logo {
   margin-right: 20px;
@@ -119,6 +123,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #eeeeee;
 }
 .user {
   width: 40px;
