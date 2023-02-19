@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkcarbon_project"]=self["webpackChunkcarbon_project"]||[]).push([[679],{2679:function(n,t,e){e.r(t),e.d(t,{default:function(){return i}});var r=function(){var n=this;n._self._c;return n._m(0)},c=[function(){var n=this,t=n._self._c;return t("div",[t("div",{staticClass:"plan"},[t("div",[n._v("plan")])])])}],a={name:"PlanView"},u=a,l=e(1001),s=(0,l.Z)(u,r,c,!1,null,"354dc344",null),i=s.exports}}]);
+//# sourceMappingURL=679.789a823e.js.map
