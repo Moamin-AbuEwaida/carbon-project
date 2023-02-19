@@ -78,6 +78,7 @@ export default {
 .icon:hover {
   scale: calc(1.2);
   text-decoration: none;
+  color: rgba(171, 171, 171, 1);
 }
 .icon p {
   margin-top: 5px;
