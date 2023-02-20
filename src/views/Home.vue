@@ -2,26 +2,46 @@
   <div>
     <div class="home">
       <!-- user info -->
-      <h1>User's info</h1>
-      <div class="info">
-        <!-- left side -->
-        <div class="left-side">
-          <div class="name">Name: {{ name }}</div>
-        </div>
-        <!-- right side -->
-        <div class="right-side">
-          <div class="gender">Gender: {{ gender }}</div>
-          <div class="height">Height: {{ height }}</div>
-          <div class="year">Date of birth: {{ year }}</div>
-        </div>
+
+      <div class="mt-4">
+        <h4>User's info</h4>
+        <b-card
+          img-src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+          img-alt="Card image"
+          img-left
+          class="mb-3"
+          style="height: 200px"
+        >
+          <b-card-text>
+            <div class="user-info">
+              <p class="name">Name: {{ name }}</p>
+              <p class="gender">Gender: {{ gender }}</p>
+              <p class="height">Height: {{ height }}</p>
+              <p class="year">Date of birth: {{ year }}</p>
+            </div>
+          </b-card-text>
+        </b-card>
       </div>
+
       <!-- vehicle info -->
-      <h1>Vehicle Info</h1>
-      <div class="car-info">
-        <div class="model">Car model: {{ model }}</div>
-        <div class="model">Car length: {{ length }}m</div>
-        <div class="model">No. of passengers: {{ passengers }}</div>
-        <div class="model">Period: {{ consumables }}</div>
+      <div class="mt-4">
+        <h4>Vehicle Info</h4>
+        <b-card
+          img-src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
+          img-alt="Card image"
+          img-right
+          class="mb-3"
+          style="height: 200px"
+        >
+          <b-card-text>
+            <div class="user-info">
+              <p>Car model: {{ model }}</p>
+              <p>Car length: {{ length }}m</p>
+              <p>No. of passengers: {{ passengers }}</p>
+              <p>Period: {{ consumables }}</p>
+            </div>
+          </b-card-text>
+        </b-card>
       </div>
     </div>
   </div>
@@ -72,7 +92,11 @@ export default {
   padding: 50px 50px;
   overflow: scroll;
 }
-.info,
+.user-info p {
+  text-align: initial;
+  font-size: 20px;
+  font-weight: bold;
+}
 .car-info {
   width: 95%;
   background-color: #fff;
@@ -90,6 +114,7 @@ export default {
 
 .right-side {
   width: 60%;
+  flex-direction: column;
 }
 
 .car-info {
