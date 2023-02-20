@@ -182,7 +182,11 @@
           <div class="lower-part">
             <!-- left side -->
             <div class="info">
-              <b-avatar class="user"></b-avatar>
+              <b-avatar
+                class="user"
+                variant="info"
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+              ></b-avatar>
               <div class="info-content">
                 <p>{{ output.data.name }}</p>
                 <p class="span">added this data</p>

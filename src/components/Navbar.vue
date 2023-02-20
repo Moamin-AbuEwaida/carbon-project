@@ -48,7 +48,11 @@
         ></b-icon>
       </div>
       <b-icon icon="bell" font-scale="1.2"></b-icon>
-      <b-avatar class="user"></b-avatar>
+      <b-avatar
+        class="user"
+        variant="info"
+        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+      ></b-avatar>
     </div>
   </nav>
 </template>
@@ -129,11 +133,8 @@ select {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.264558;
-  background-color: rgba(0, 0, 0, 1);
 }
 </style>
