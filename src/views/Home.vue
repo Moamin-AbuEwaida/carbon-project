@@ -1,6 +1,8 @@
 <template>
   <div>
     <div class="home">
+      <BarChart />
+
       <!-- user info -->
 
       <div class="mt-4">
@@ -48,10 +50,13 @@
 </template>
 
 <script>
+import BarChart from "../components/Bar.vue";
+
 import axios from "axios";
 
 export default {
   name: "HomeView",
+  components: { BarChart },
   data() {
     return {
       name: null,
@@ -64,6 +69,7 @@ export default {
       consumables: null,
     };
   },
+
   mounted() {
     // fetching user's info
     axios.get("https://swapi.dev/api/people/1/").then((res) => {
