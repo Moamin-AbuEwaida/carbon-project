@@ -25,8 +25,9 @@ export default {
   top: 61px;
   left: 0;
   position: absolute;
-  height: 100vh;
+  height: 92vh;
   width: 100vw;
   padding: 60px;
+  overflow: hidden;
 }
 </style>

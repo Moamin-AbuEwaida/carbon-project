@@ -50,7 +50,7 @@ export default {
 .sidebar {
   background-color: #fff;
   width: 60px;
-  height: 100vh;
+  height: 92vh;
   border-right: 1px solid #eeeeee;
   position: relative;
   z-index: 1;

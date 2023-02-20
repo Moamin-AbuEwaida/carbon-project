@@ -280,9 +280,11 @@ export default {
 .main {
   background: rgb(246, 242, 242);
   position: absolute;
+  top: 0;
   width: 95%;
   height: 95%;
-  padding: 0px 50px;
+  padding: 50px 50px;
+  overflow: scroll;
 }
 .head {
   display: flex;
@@ -308,7 +310,7 @@ export default {
   display: none;
   background-color: #fff;
   position: absolute;
-  top: -61px;
+  top: 0;
   right: 0;
   width: 400px;
   height: 100%;
